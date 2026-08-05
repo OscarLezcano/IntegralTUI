@@ -91,7 +91,8 @@ def show_assistance_data(subject_id, subject_name):
 def show_homework_menu():
     """Muestra un menú para seleccionar una materia y ver sus detalles de tareas."""
     subjects = favorite_subjects
-    subjects_names = ["[magenta]Mostrar resumen de todas las materias[/magenta]"]
+    emogi = r"¯\_(ツ)_/¯"
+    subjects_names = [f"Mostrar resumen de todas las materias{emogi}"]
     subjects_ids = [0]
     for subject in subjects:
         subjects_names.append(subject.get("materia", "N/A"))
@@ -102,14 +103,24 @@ def show_homework_menu():
 
     selected_index = subjects_names.index(selected_subject)
     selected_subject_id = subjects_ids[selected_index]
-    
+
+    console.clear()
     if selected_subject_id == 0:
         show_resume_favorite_subjects()
     else:
-        show_homework_data(selected_subject_id, selected_subject)
-        console.clear()
-        show_assistance_data(selected_subject_id, selected_subject)
+        selected_option = detail_selector_menu()
+   
+        if selected_option == "Ver detalles de tareas":
+            show_homework_data(selected_subject_id, selected_subject)
+        elif selected_option == "Ver detalles de asistencia":
+            show_assistance_data(selected_subject_id, selected_subject)
 
+def detail_selector_menu():
+    """Muestra un menú para seleccionar entre ver detalles de tareas o asistencia."""
+    options = ["Ver detalles de tareas", "Ver detalles de asistencia"]
+    console.print("[green]Selecciona una opcion:[/green]")
+    selected_option = select(options, cursor="🢧", cursor_style="cyan")
+    return selected_option
 
 # Variable global para almacenar las materias favoritas
 # quiero cachearla para el menu principal asi no tengo
