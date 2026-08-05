@@ -2,7 +2,7 @@ from beaupy import prompt, select
 from beaupy.spinners import DOTS, Spinner
 from rich.console import Console
 from src.api import APIClient
-import format_data
+from src import format_data
 import os
 from dotenv import load_dotenv
 
@@ -139,5 +139,3 @@ def menu():
     while True:
         console.clear()
         show_homework_menu()
-
-menu()
