@@ -3,15 +3,25 @@ from beaupy.spinners import DOTS, Spinner
 from rich.console import Console
 from src.api import APIClient
 import format_data
+import os
+from dotenv import load_dotenv
 
+load_dotenv()
 console = Console()
 client = None  # Variable global para almacenar el cliente de la API  
 
 def login():
     """Solicita las credenciales al usuario y devuelve un APIClient autenticado."""
 
-    email = prompt("Ingresa tu email")
-    password = prompt("Ingresa tu contraseña", secure=True)
+    email = None
+    password = None
+    
+    if (str(os.getenv("DEBUG_MODE")) == "1" ):
+        email = os.getenv("MAIL")
+        password = os.getenv("PASSWORD")
+    else:
+        email = prompt("Ingresa tu email")
+        password = prompt("Ingresa tu contraseña", secure=True)
 
     spinner = Spinner(DOTS, "Iniciando sesión...")
     spinner.start()
