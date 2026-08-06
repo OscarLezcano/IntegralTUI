@@ -1,0 +1,8 @@
+services:
+  integral-tui:
+    build: .
+    ports:
+      - "2222:2222"
+    env_file:
+      - .env
+    restart: no
