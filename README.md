@@ -6,6 +6,7 @@ Permite visualizar en la terminal las materias favoritas del estudiante, sus tar
 
 ![Pantalla principal](images/pantalla_principal.png)
 ![Resumen general](images/resumen%20general.png)
+![Pantalla Seleccion](images/pantalla_seleccion.png)
 ![Puntajes](images/puntajes.png)
 ![Asistencia](images/asistencia.png)
 
