@@ -4,6 +4,11 @@ Aplicación de Terminal User Interface (TUI) para consultar los datos académico
 
 Permite visualizar en la terminal las materias favoritas del estudiante, sus tareas (homework) y la asistencia a clases, consumiendo la API pública de IntegralFIUNI.
 
+![Pantalla principal](images/pantalla_principal.png)
+![Resumen general](images/resumen%20general.png)
+![Puntajes](images/puntajes.png)
+![Asistencia](images/asistencia.png)
+
 ## Requisitos
 
 - Python >= 3.13
